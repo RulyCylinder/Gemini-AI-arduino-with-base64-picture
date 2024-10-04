@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
-
+  img = "\"" + img + "\"";
   while (!Serial)
     ;
 
@@ -45,7 +45,6 @@ void loop()
   int len = res.length();
   res = res.substring(0, (len - 1));
   res = "\"" + res + "\"";
-  img = "\"" + img + "\"";
   Serial.println("");
   Serial.print("Asking Your Question : ");
   Serial.println(res);
